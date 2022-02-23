@@ -1,0 +1,97 @@
+.custom-alert-main {
+    background: #eee0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+}
+
+.custom-alert {
+    width: 350px;
+    max-width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    transition: 1.1s ease-out;
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    border-radius: 15px;
+}
+
+.custom-alert.off {
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(8px);
+    transform: scale(0.33);
+    box-shadow: 1rem 0 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.custom-alert .title {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-alert .title .title-icon-style {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.custom-alert .title .title-icon-style img {
+    max-width: 100%;
+    height: auto;
+}
+
+.custom-alert .title .title-text-style {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Content */
+.custom-alert .content {
+    padding: 0 15px;
+    font-size: 14px;    
+    text-align: center;
+}
+
+.custom-alert .actions {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-alert .actions button {
+    width: 100px;
+    height: 35px;
+    border: 0;
+    font-size: 12px;
+    margin: 0 5px;
+}
+.custom-alert .actions button.request-btn{
+    background: black;
+    color: #fff;
+}
+.custom-alert .actions button.request-cancel-btn{
+    background: red;
+    color: #fff;
+}
+@supports (offset-rotate: 0deg) {
+    .custom-alert.off {
+        offset-distance: 100%;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .custom-alert {
+        offset-path: none;
+    }
+}
